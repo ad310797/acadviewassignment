@@ -1,0 +1,58 @@
+#q1. print after waiting for 5 seconds
+import time
+import threading
+
+def abc():
+   print("the thread will wait for 5 seconds")
+   time.sleep(5)
+   print("hi")
+
+threading.Thread(target=abc).start()
+
+
+#q2. print number from 1 to 10 with a delay of 1 sec.
+import time
+import threading
+
+def num():
+   for i in range(1,11):
+       time.sleep(1)
+       print(i)
+
+threading.Thread(target=num).start()
+
+
+#q3. print elements of list with delay of 2 seconds
+import time
+import threading
+
+li=['A','B','C','D','E']
+
+def list():
+    delay=2
+    for i in li:
+        time.sleep(delay)
+        print(i)
+        delay+=2
+
+threading.Thread(target=list).start()   
+
+
+
+#q4 call factorial using thread
+import time
+import threading
+def factorial(num,a):
+    fact=1
+    for i in range(2,num+1):
+       fact*=i
+    print("Factorial of %d is %d"%(num,fact))
+    time.sleep(a)
+
+n=int(input("Enter number: "))
+threading.Thread(target=factorial,args=(n,2)).start()
+     
+        
+
+
+
